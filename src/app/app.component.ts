@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title: string;
+  loaded: boolean;
+
+  constructor() {
+    this.title = 'my fantastic angular-workshop';
+    this.loaded = false;
+
+    setTimeout(() => {
+      this.loaded = true;
+    }, 4000);
+  }
 }
