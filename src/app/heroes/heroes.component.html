@@ -1,5 +1,41 @@
-<p>
+<h1>Hi there, {{ hero.name }}</h1>
+
+<p [style.background]="backgroundColor" [style.padding]="padding" [ngClass]="{ 'display-none': !loaded }">
   Hero ID: {{ hero.id }}
   <br />
   Hero Name: {{ hero.name }}
+  <br />
+  Hero Age: {{ hero.age }}
 </p>
+
+<div>
+  <label>ID: {{ hero.id }} (this cannot be changed!)</label>
+  <br />
+  <label>Name:
+    <input type="text" [(ngModel)]="hero.name" placeholder="name" />
+  </label>
+  <br />
+  <label>Age:
+    <input type="number" [(ngModel)]="hero.age" placeholder="age" />
+  </label>
+</div>
+
+<button type="button" (click)="greetings(hero.name)">Greet me!</button>
+
+<br />
+<br />
+<br />
+
+<div *ngIf="moreHeroes">
+  <ul *ngFor="let hero of moreHeroes">
+    <li>
+      ID: {{ hero.id }}
+    </li>
+    <li>
+      Name: {{ hero.name }}
+    </li>
+    <li *ngIf="hero.age">
+      Age: {{ hero.age }}
+    </li>
+  </ul>
+</div>

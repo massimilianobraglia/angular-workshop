@@ -7,14 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string;
-  loaded: boolean;
 
   constructor() {
     this.title = 'my fantastic angular-workshop';
-    this.loaded = false;
-
-    setTimeout(() => {
-      this.loaded = true;
-    }, 4000);
   }
 }
